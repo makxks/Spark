@@ -1,0 +1,9 @@
+Builds/
+Temp/
+Library/
+Builds/*
+Temp/*
+Library/*
+*.aab
+*.zip
+*.txt
