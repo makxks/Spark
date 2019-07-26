@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 17917022}
   - component: {fileID: 17917024}
   - component: {fileID: 17917018}
+  - component: {fileID: 17917025}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Sphere
@@ -4824,7 +4825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61a32d897ed68e409501c50bdd0fe2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  available: {fileID: 0}
+  available: {fileID: 17917014}
 --- !u!54 &17917024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4840,6 +4841,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &17917025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 17917014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: c1eeeb4feea514843baf5375aa37e8e3, type: 2}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &25243408
 GameObject:
   m_ObjectHideFlags: 0
@@ -9964,8 +9981,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableTimer: 0
-  spark: {fileID: 0}
-  explosion: {fileID: 0}
+  spark: {fileID: 17917014}
+  explosion: {fileID: 150235705}
 --- !u!114 &317815611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10036,7 +10053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f5a9ad4f8ebce439d7c3a50a86811a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 395362649}
 --- !u!114 &395362649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10103,16 +10120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d598da4ea3520474bb488a0fc5598c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirm: {fileID: 0}
-  cancel: {fileID: 0}
-  move: {fileID: 0}
-  rotate: {fileID: 0}
-  gate: {fileID: 0}
-  menuMusic: {fileID: 0}
-  gameMusic: {fileID: 0}
-  gameOver: {fileID: 0}
-  fixedRing: {fileID: 0}
-  explodeSound: {fileID: 0}
+  confirm: {fileID: 676977666}
+  cancel: {fileID: 1446353031}
+  move: {fileID: 1894669704}
+  rotate: {fileID: 1732472661}
+  gate: {fileID: 1865557006}
+  menuMusic: {fileID: 1632167595}
+  gameMusic: {fileID: 1818197184}
+  gameOver: {fileID: 25243409}
+  fixedRing: {fileID: 572885541}
+  explodeSound: {fileID: 155464848}
 --- !u!4 &422741253
 Transform:
   m_ObjectHideFlags: 0
@@ -15800,11 +15817,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c83a02308b5f1340a1e6d377f0662da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringPart: {fileID: 0}
-  emptyRing: {fileID: 0}
-  ringSet: {fileID: 0}
-  sphere: {fileID: 0}
-  chargeGate: {fileID: 0}
+  ringPart: {fileID: 839546901}
+  emptyRing: {fileID: 826091512}
+  ringSet: {fileID: 1059473981}
+  sphere: {fileID: 17917014}
+  chargeGate: {fileID: 530812645}
   rings: []
 --- !u!4 &811776067
 Transform:
@@ -17513,6 +17530,8 @@ GameObject:
   - component: {fileID: 1702344321}
   - component: {fileID: 1702344323}
   - component: {fileID: 1702344322}
+  - component: {fileID: 1702344325}
+  - component: {fileID: 1702344324}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17573,7 +17592,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -17662,6 +17681,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb51022595a88d44a9a17a7ddd0a4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1702344324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702344314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: c1eeeb4feea514843baf5375aa37e8e3, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1702344325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702344314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1702344319}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1720748502
 GameObject:
   m_ObjectHideFlags: 0
@@ -23016,12 +23110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33754f3c21c9274488168bbea2f09b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalGlow: {fileID: 0}
-  activeRingSetGlow: {fileID: 0}
-  activeRingGlow: {fileID: 0}
-  fixedRingGlow: {fileID: 0}
-  rotatorRingGlow: {fileID: 0}
-  timedRingGlow: {fileID: 0}
+  normalGlow: {fileID: 2100000, guid: 6019010ce73fa4b49965f7be1979befb, type: 2}
+  activeRingSetGlow: {fileID: 2100000, guid: 71eda617173325c418aa9a8de9eefdc3, type: 2}
+  activeRingGlow: {fileID: 2100000, guid: bed047264c9c8c145bda295bbb950612, type: 2}
+  fixedRingGlow: {fileID: 2100000, guid: c5c0d32ebe345aa43a176e90e212c952, type: 2}
+  rotatorRingGlow: {fileID: 2100000, guid: 99575a6926b2e6b47b131ad7c2aee01b, type: 2}
+  timedRingGlow: {fileID: 2100000, guid: 59ffddd90d6fe424eb22a7fc8a9c9707, type: 2}
 --- !u!4 &1916483264
 Transform:
   m_ObjectHideFlags: 0

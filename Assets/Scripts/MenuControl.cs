@@ -51,6 +51,32 @@ public class MenuControl : MonoBehaviour {
     {
         if (menu.inControls)
         {
+
+            if (Input.GetButtonDown("Jump") && !moving)
+            {
+                OptionsValues.optionValues.move.Play();
+                StopAllCoroutines();
+                StartCoroutine(sparkJump(spark, spark.GetComponentInParent<Transform>().position.z));
+            }
+            if (Input.GetButtonDown("moveToNextRing") && !moving)
+            {
+                OptionsValues.optionValues.move.Play();
+                setHorizontalMove(true);
+                StopAllCoroutines();
+                StartCoroutine(sparkMoveHorizontal(spark, spark.transform.localPosition.x));
+            }
+            if (Input.GetButtonDown("moveRight") && !moving)
+            {
+                StopAllCoroutines();
+                StartCoroutine(rotateRing(1));
+            }
+            if (Input.GetButtonDown("moveLeft") && !moving)
+            {
+                StopAllCoroutines();
+                StartCoroutine(rotateRing(-1));
+            }
+
+
             if (!delayComplete)
             {
                 delayTimer += Time.deltaTime;
